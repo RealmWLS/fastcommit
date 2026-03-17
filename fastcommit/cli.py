@@ -6,6 +6,8 @@ import subprocess
 def main():
     parser = argparse.ArgumentParser(description="AI git commit tool using Groq")
     parser.add_argument("--no-confirm", action="store_true", help="Skip confirmation")
+    parser.add_argument("--amend", action="store_true", help="Amend last commit")
+
     args = parser.parse_args()
 
     print_header()
@@ -25,5 +27,5 @@ def main():
             print("Aborted")
             return
 
-    subprocess.run(["git", "commit", "-m", msg])
+    subprocess.run(["git", "commit", "-m", msg, "--amend" if args.amend else ""])
     print("Commit created")
