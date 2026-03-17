@@ -2,6 +2,7 @@ import argparse
 from fastcommit.core import get_staged_diff, generate_message
 from fastcommit.utils import print_header, print_error
 import subprocess
+import os
 
 def main():
     parser = argparse.ArgumentParser(description="AI git commit tool using Groq")
@@ -11,6 +12,10 @@ def main():
     args = parser.parse_args()
 
     print_header()
+    
+    if not os.path.isdir(".git"):
+        print_error("Not a git repository")
+        return
     diff = get_staged_diff()
     if not diff.strip():
         print_error("No staged changes")
