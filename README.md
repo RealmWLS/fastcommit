@@ -36,3 +36,40 @@ set GROQ_API_KEY=your_api_key
 * Follow Conventional Commits format
 * Simple command-line interface
 * Fast AI inference using Groq
+
+
+## Usage
+
+Stage your changes using git:
+
+```bash
+git add .
+```
+
+Run fastcommit to generate a commit message:
+
+```bash
+fastcommit
+```
+
+The tool will analyze your staged changes and suggest a commit message. You will be prompted to confirm before committing.
+
+### Options
+
+Skip confirmation prompt:
+
+```bash
+fastcommit --no-confirm
+```
+
+Amend the last commit:
+
+```bash
+fastcommit --amend
+```
+
+Combine both options:
+
+```bash
+fastcommit --no-confirm --amend
+```
