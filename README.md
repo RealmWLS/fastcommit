@@ -73,3 +73,4 @@ Combine both options:
 ```bash
 fastcommit --no-confirm --amend
 ```
+**Created by RealmWLS**
